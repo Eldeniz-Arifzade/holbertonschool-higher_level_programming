@@ -5,11 +5,9 @@ if __name__ == "__main__":
     if len(argv) != 4:
         print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         exit(1)
-    
     a = argv[1]
     operator = argv[2]
     b = argv[3]
-
     if operator == '+':
         print('{} {} {} = {}'.format(a, operator, b, add(int(a), int(b))))
     elif argv[2] == '-':
