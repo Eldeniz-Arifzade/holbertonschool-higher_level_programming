@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import sys
+from sys import argv, exit
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
-    if len(sys.argv) != 4:
-        print('Usage: ./100-my_calculator.py <a> <operator> <b>\n')
+    if len(argv) != 4:
+        print('Usage: ./100-my_calculator.py <a> <operator> <b>')
+        exit(1)
     elif argv[2] == '+':
         print('{} {} {} = {}'.format(argv[1], argv[2], argv[3], add(int(argv[1]), int(argv[3]))))
     elif argv[2] == '-':
@@ -13,5 +14,5 @@ if __name__ == "__main__":
     elif argv[2] == '/':
         print('{} {} {} = {}'.format(argv[1], argv[2], argv[3], div(int(argv[1]), int(argv[3]))))
     else:
-        print('Unknown operator. Available operators: +, -, * and /\n')
-    sys.exit(1)
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
