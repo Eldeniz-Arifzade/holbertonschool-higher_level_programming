@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     if len(roman_string) is None or type(roman_string) != str:
         return 0
     s = 0
-    for i in range(len(roman_list)-1):
+    for i in range(len(roman_string)-1):
         if roman[roman_string[i]] < roman[roman_string[i+1]]:
             s -= roman[roman_string[i]]
         else:
