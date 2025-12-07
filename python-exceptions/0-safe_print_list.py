@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
     try:
-        print(''.join(my_list[:x]))
-    except:
-        print(''.join(my_list))
+        for i in range(x):
+            print(my_list[i], end='')
+    except IndexError:
+        for i in my_list:
+            print(i, end='')
