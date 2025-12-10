@@ -49,9 +49,9 @@ class Rectangle:
             return rect_print
         for i in range(self.__height):
             if i != self.__height - 1:
-                rect_print += Rectangle.print_symbol * self.__width + '\n'
+                rect_print += self.print_symbol * self.__width + '\n'
             else:
-                rect_print += Rectangle.print_symbol * self.__width
+                rect_print += self.print_symbol * self.__width
         return rect_print
 
     def __repr__(self):
