@@ -60,6 +60,7 @@ class Rectangle:
     def __del__(self):
         """delete rectangle object"""
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
 
     def area(self):
         """Calc the area based on width and height"""
