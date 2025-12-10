@@ -42,7 +42,7 @@ class Rectangle:
         rect_print = ''
         if self.__width == 0 or self.__height == 0:
             return rect_print
-        for i in range(height):
+        for i in range(self.__height):
             rect_print += '#' * self.__width + '\n'
         return rect_print
 
