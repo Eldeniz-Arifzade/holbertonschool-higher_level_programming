@@ -43,7 +43,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return rect_print
         for i in range(self.__height):
-            rect_print += '#' * self.__width + '\n' if i == self.__height - 1 else '#' * self.__width
+            rect_print += '#' * self.__width + '\n' if i != self.__height - 1 else '#' * self.__width
         return rect_print
 
     def area(self):
