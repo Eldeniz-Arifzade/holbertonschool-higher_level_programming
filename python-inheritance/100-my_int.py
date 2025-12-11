@@ -4,7 +4,7 @@
 
 class MyInt(int):
     """Rebel class"""
-    def __init__(value):
+    def __init__(self, value):
         """Initialize class"""
         self.value = value
 
