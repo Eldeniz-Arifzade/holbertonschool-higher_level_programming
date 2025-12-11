@@ -18,4 +18,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """How instances will show up when printed"""
-        return f"[Rectangle] {self.__width/self.__height}"
+        return f"[Rectangle] {self.__width}/{self.__height}"
