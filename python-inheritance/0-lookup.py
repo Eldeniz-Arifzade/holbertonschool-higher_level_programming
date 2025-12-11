@@ -3,4 +3,5 @@
 
 
 def lookup(obj):
+    """will return list of available attributes of obj"""
     return list(obj.__dict__.keys())
