@@ -4,10 +4,14 @@
 
 class MyInt(int):
     """Rebel class"""
+    def __init__(value):
+        """Initialize class"""
+        self.value = value
+
     def __eq__(self, other):
         """Replace with !="""
-        return self != other
-    
+        return self.value != other
+
     def __ne__(self, other):
         """Replace with =="""
-        return self == other
+        return self.value == other
