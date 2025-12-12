@@ -14,7 +14,7 @@ class Student:
         """Retrieve a dictionary representation of the student instance"""
         dictionary_json = self.__dict__.copy()
         if attrs is not None and attrs == list(map(str, attrs)):
-            for i in dictionary_json:
+            for i in dictionary_json.copy():
                 if i not in attrs:
                     del dictionary_json[i]
         return dictionary_json
