@@ -4,10 +4,10 @@
 
 def pascal_triangle(n):
     """This function will return n-th order Pascal traingles in list of lists"""
-    if n<= 0:
+    if n <= 0:
         return []
     l = [[1]*i for i in range(1, n+1)]
-    for i in range(1, n-1):
+    for i in range(2, n):
         for j in range(1, i):
             l[i][j] = l[i-1][j-1] + l[i-1][j]
     return l
