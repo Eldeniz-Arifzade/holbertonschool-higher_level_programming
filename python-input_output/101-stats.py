@@ -23,6 +23,8 @@ if __name__ == "__main__":
                     if status_counts[key] > 0:
                         print(f'{key}: {status_counts[key]}')
     except KeyboardInterrupt:
+        pass
+    finally:
         print("File size:", total_size)
         for key in sorted(status_counts.keys()):
             if status_counts[key] > 0:
