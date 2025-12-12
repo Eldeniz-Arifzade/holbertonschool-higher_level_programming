@@ -12,9 +12,9 @@ class Student:
 
     def to_json(self, attrs=None):
         """Retrieve a dictionary representation of the student instance"""
-        dictionary_json = self.__dict__
-        if attrs != None and attrs == list(map(str, attrs)):
-            for i in attrs:
+        dictionary_json = self.__dict__.copy()
+        if attrs is not None and attrs == list(map(str, attrs)):
+            for i in dictionary_json:
                 if i not in attrs:
                     del dictionary_json[i]
         return dictionary_json
