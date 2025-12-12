@@ -14,13 +14,15 @@ try:
         status = last_part[-2]
         size = last_part[-1]
         total_size += int(size)
-        if status in status_codes and status_counts.get(status, 0) != 0:
-            status_counts[status] = status_counts.get(status)
+        if status in status_codes:
+            status_counts[status] = status_counts.get(status, 0) + 1
         if line_count % 10 == 0:
             print("File size:", total_size)
             for key in sorted(status_counts.keys()):
-                print(f'{key}: {status_counts[key]}')
+                if status_counts[key] > 0:
+                    print(f'{key}: {status_counts[key]}')
 except KeyboardInterrupt:
     print("File size:", total_size)
-    for key, value in status_counts.items():
-        print(f'{key}: {value}')
+    for key in sorted(status_counts.keys()):
+        if status_counts[key] > 0:
+            print(f'{key}: {status_counts[key]}')
