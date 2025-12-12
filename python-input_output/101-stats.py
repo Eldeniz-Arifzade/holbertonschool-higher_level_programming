@@ -21,4 +21,4 @@ try:
 except KeyboardInterrupt:
     print("File size:", total_size)
     for key, value in status_counts.items():
-    print(f'{key}: {value}')
+        print(f'{key}: {value}')
