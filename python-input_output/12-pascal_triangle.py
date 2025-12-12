@@ -3,7 +3,7 @@
 
 
 def pascal_triangle(n):
-    """This function will return n-th order Pascal traingles in list of lists"""
+    """Function will return n-th order Pascal traingles in list of lists"""
     if n <= 0:
         return []
     l = [[1]*i for i in range(1, n+1)]
