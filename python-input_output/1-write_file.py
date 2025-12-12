@@ -3,6 +3,6 @@
 
 
 def write_file(filename="", text=""):
-    """This function will write text to filename, and return num of chars written"""
+    """Function will write text to file, and return num of chars written"""
     with open(filename, 'w', encoding='UTF8') as f:
         return(f.write(text))
