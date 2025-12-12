@@ -10,14 +10,16 @@ status_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
 try:
     for line in sys.stdin:
         line_count += 1
-        status, size = line.split()[-2, -1]
-        total_size += size
-        if status in status_codes:
-            status_counts[status] += 1
+        last_part = line.split()
+        status = last_part[-2]
+        size = last_part[-1]
+        total_size += int(size)
+        if status in status_codes and status_counts.get(status, 0) != 0:
+            status_counts[status] = status_counts.get(status)
         if line_count % 10 == 0:
             print("File size:", total_size)
-            for key, value in status_counts.items():
-                print(f'{key}: {value}')
+            for key in sorted(status_counts.keys()):
+                print(f'{key}: {status_counts[key]}')
 except KeyboardInterrupt:
     print("File size:", total_size)
     for key, value in status_counts.items():
