@@ -19,6 +19,9 @@ class CustomObject:
     def deserialize(cls, filename):
         with open(filename, 'rb') as file:
             try:
-                return pickle.load(file)
+                data = pickle.load(file)
+                obj = cls.__new__(cls)
+                obj.__dict__.update(data)
+                return obj
             except Exception:
                 return None
