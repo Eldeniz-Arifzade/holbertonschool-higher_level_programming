@@ -18,7 +18,7 @@ def deserialize_from_xml(filename):
     for element in root.findall("item"):
         key = element.get("key")
         type_name = element.get("type")
-        text = element.text
+        text = element.text.strip()
         if text_name == "int":
             value = int(text)
         elif text_name == "float":
