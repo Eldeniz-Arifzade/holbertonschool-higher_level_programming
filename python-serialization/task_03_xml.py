@@ -15,13 +15,13 @@ def deserialize_from_xml(filename):
     tree = ET.parse(filename)
     root = tree.getroot()
     result = {}
-    for element in root.findall("item"):
+    for element in root:
         key = element.get("key")
         type_name = element.get("type")
         text = element.text.strip()
-        if text_name == "int":
+        if type_name == "int":
             value = int(text)
-        elif text_name == "float":
+        elif type_name == "float":
             value = float(text)
         elif type_name == "bool":
             value = text == "True"
