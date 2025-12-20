@@ -1,5 +1,5 @@
 -- Drop rows that have bad scores
-DELETE *
+DELETE
 FROM second_table
 WHERE score<=5;
 
